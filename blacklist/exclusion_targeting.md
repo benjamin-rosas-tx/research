@@ -26,8 +26,8 @@ To implement blacklisted segments is necessary to change code in 3 projects:
 ### Ventura 
 Should add a blacklisted users administration area in location-user tab.
   
- * Add new field to campaigns table called exclusion_targeting
- * Add blacklisted_user table. Contain (campaign_id, user_id, created_at, updated_at)
+ * Add new field to campaigns table called exclusion_targeting. Adding blacklisted segments.
+ * Add blacklisted_segment_user table. Contain (segment_id, user_id, created_at, updated_at)
  
  * UI update should include new section for blacklisted users. Needed an uploader to load all users to be excluded in campaign.
   
@@ -40,6 +40,6 @@ Should iterate thought campaigns collecting a blacklist segment and pushed to de
 ### Venice 
 In basic bid decision should retrieve from blacklists.
 
- * Add new EligibilityFactor for blacklisted user.
  * Add new DAO for retrieve users blacklists.
  * Update CampaignData model adding including banned user flag.
+ * Add new EligibilityFactor for blacklisted user.
